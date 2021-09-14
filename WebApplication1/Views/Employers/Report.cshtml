@@ -1,0 +1,780 @@
+﻿@model IEnumerable<WebApplication1.Models.Employer>
+
+@{
+    Layout = null;
+}
+
+@Styles.Render("~/Content/Theme/assets/global/plugins/fontsGoogleApis/FontsGoogleApis.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/font-awesome/css/font-awesome.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap/css/bootstrap.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css")
+
+@Styles.Render("~/Content/Theme/assets/global/plugins/jquery-ui/jquery-ui.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/select2/css/select2.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/select2/css/select2-bootstrap.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.skinFlat.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-toastr/toastr.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/datatables/datatables.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/datatables/KeyTable/css/keyTable.dataTables.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/datatables/Editor/css/editor.dataTables.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-table/bootstrap-table.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/jstree/dist/themes/default/style.min.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-sweetalert/sweetalert.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/jquery-multi-select/css/multi-select.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/typeahead/typeahead.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/amcharts/amcharts/plugins/export/export.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css")
+@Styles.Render("~/Content/Theme/assets/global/plugins/daterangepicker/daterangepicker.css")
+@Styles.Render("~/Content/Theme/assets/layouts/layout/css/themes/darkblue.min.css")
+
+@Styles.Render("~/Content/Theme/assets/global/css/components.min.css")
+@Styles.Render("~/Content/Theme/assets/global/css/plugins.min.css")
+
+@Styles.Render("~/Content/Theme/assets/layouts/layout/css/layout.min.css")
+@Styles.Render("~/Content/Theme/assets/layouts/layout/css/themes/darkblue.min.css")
+@Styles.Render("~/Content/Theme/assets/layouts/layout/css/custom.css")
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <body id="BdyLayoutLogin" class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+
+        <input id="NameControllerERP" name="NameControllerERP" type="hidden" value="Home">
+
+        <div class="page-wrapper">
+
+
+            <div class="page-header navbar navbar-fixed-top">
+                <div class="page-header-inner ">
+                    <div class="top-menu">
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+            <div class="page-container">
+                <div class="page-content-wrapper">
+                    <div style="padding-left:100px; padding-right:100px; min-height:0px;">
+                        <div id="BodyApp">
+                            <div class="note note-danger bg-red bg-font-red" style="display:none" id="errorFromController">
+                                <i class="fa fa-warning"></i>
+                                <p class="inline-block" id="strErrorFromController"></p>
+                            </div>
+
+                            <div class="erp-box-mn-wrp">
+                                <h1 class="page-title">Crear Empleado</h1>
+                                <p>
+                                    @Html.ActionLink("Crear Empleado", "Create", null, new { @class = "btn btn - circle green margin - right - 10" })
+                                </p>
+                                <!-- END PORTLET TITLE-->
+                                <div class="portlet blue box erp-portlet-table" id="ListaEmpleadoTH">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="fa fa-list"></i>Lista Empleados
+                                        </div>
+                                        <div class="tools" style="font-size:16px">
+
+                                            <a href="javascript:;" class="font-white" data-original-title="" title="" id="XLSExp">
+                                                <i class="fa fa-file-excel-o"></i>
+                                            </a>
+                                            <a href="javascript:;" class="collapse" data-original-title="" title=""></a>
+                                        </div>
+                                    </div>
+                                    <!-- END PORTLET TITLE-->
+                                    <div class="portlet-body ">
+
+
+                                        <div id="grdEmpleadoTH_wrapper" class="dataTables_wrapper no-footer">
+                                            <div class="dataTables_length" id="grdEmpleadoTH_length">
+                                                <label>Mostrar <select name="grdEmpleadoTH_length" aria-controls="grdEmpleadoTH" class="form-control input-sm input-xsmall input-inline"><option value="10">10</option><option value="20">20</option><option value="50">50</option><option value="100">100</option><option value="-1">Todos</option></select></label>
+                                            </div>
+                                            <div class="erp-filters-tools pull-right">
+                                                <button id="btnShowOrHideFilter" type="button" class="btn btn-link erp-dtable-filters-hide" style="padding-right: 0;">Ocultar Filtros</button>
+                                            </div>
+                                            <div class="dataTables_scroll">
+                                                <div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;">
+                                                    <div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 1158px; padding-right: 0px;">
+                                                        <table class="table table-striped table-bordered table-hover dataTable no-footer erp-table js-dtable-filters 0982c6ec-5e40-4330-90a6-8674ea404893" width="100%" role="grid" style="margin-left: 0px; width: 1158px;">
+                                                            <thead>
+                                                                <tr role="row">
+                                                                    <th class="no-sorting sorting_disabled" rowspan="1" colspan="1" style="width: 40px;" aria-label=" Acción "> Acción </th>
+                                                                    <th class="sorting_desc" tabindex="0" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 132px;" aria-sort="descending" aria-label=" Activo : activate to sort column ascending"> Activo </th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 132px;" aria-label=" Tipo de Documento : activate to sort column ascending"> Tipo de Documento </th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 112px;" aria-label=" Documento : activate to sort column ascending"> Documento </th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 112px;" aria-label=" Nombre : activate to sort column ascending"> Nombre </th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 113px;" aria-label=" Apellido : activate to sort column ascending"> Apellido </th>
+                                                                    <th class="sorting" tabindex="0" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 237px;" aria-label=" Correo Electrónico : activate to sort column ascending"> Correo Electrónico </th>
+                                                                </tr>
+                                                                <tr id="grdEmpleadoTH_Filter" class="erp-dtable-filters-row" role="row">
+                                                                    <th class="no-sorting" style="width:20px;" rowspan="1" colspan="1"></th>
+                                                                    <th class="no-sorting erp-dtable-filter-select2" style="width:20px;" rowspan="1" colspan="1">
+                                                                        <select id="select_TERACTGRID" class="form-control js-select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option></option><option value="1">Activo</option><option value="0">Inactivo</option></select>
+                                                                        <span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-select_TERACTGRID-container"><span class="select2-selection__rendered" id="select2-select_TERACTGRID-container"><span class="select2-selection__placeholder"></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                    </th>
+                                                                    <th class="no-sorting erp-dtable-filter-select2" style="width:20px;" rowspan="1" colspan="1">
+                                                                        <select id="select_TDOCCODGRID" class="form-control js-select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option></option><option value="1">CEDULA CIUDADANIA</option><option value="2">CEDULA EXTRANGERIA</option><option value="4">PASAPORTE</option></select>
+                                                                        <span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-select_TDOCCODGRID-container"><span class="select2-selection__rendered" id="select2-select_TDOCCODGRID-container"><span class="select2-selection__placeholder"></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                    </th>
+                                                                    <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1">
+                                                                        <input type="text">
+                                                                    </th>
+                                                                    <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1">
+                                                                        <input type="text">
+                                                                    </th>
+                                                                    <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1">
+                                                                        <input type="text">
+                                                                    </th>
+                                                                    <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1">
+                                                                        <input type="text">
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;">
+                                                    <table class="table table-striped table-bordered table-hover dataTable no-footer erp-table js-dtable-filters 0982c6ec-5e40-4330-90a6-8674ea404893" id="grdEmpleadoTH" width="100%" role="grid" aria-describedby="grdEmpleadoTH_info" style="width: 100%;">
+                                                        <thead>
+                                                            <tr role="row" style="height: 0px;">
+                                                                <th class="no-sorting sorting_disabled" rowspan="1" colspan="1" style="width: 40px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=" Acción ">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Acción </div>
+                                                                </th>
+                                                                <th class="sorting_desc" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 132px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="descending" aria-label=" Activo : activate to sort column ascending">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Activo </div>
+                                                                </th>
+                                                                <th class="sorting" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 132px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=" Tipo de Documento : activate to sort column ascending">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Tipo de Documento </div>
+                                                                </th>
+                                                                <th class="sorting" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 112px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=" Documento : activate to sort column ascending">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Documento </div>
+                                                                </th>
+                                                                <th class="sorting" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 112px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=" Nombre : activate to sort column ascending">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Nombre </div>
+                                                                </th>
+                                                                <th class="sorting" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 113px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=" Apellido : activate to sort column ascending">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Apellido </div>
+                                                                </th>
+                                                                <th class="sorting" aria-controls="grdEmpleadoTH" rowspan="1" colspan="1" style="width: 237px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label=" Correo Electrónico : activate to sort column ascending">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"> Correo Electrónico </div>
+                                                                </th>
+                                                            </tr>
+
+
+                                                            <tr id="grdEmpleadoTH_Filter" class="erp-dtable-filters-row" role="row" style="height: 0px;">
+                                                                <th class="no-sorting" style="width: 50px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" rowspan="1" colspan="1">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;"></div>
+                                                                </th>
+                                                                <th class="no-sorting erp-dtable-filter-select2" style="width: 172px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" rowspan="1" colspan="1">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;">
+                                                                        <select id="select_TERACTGRID" class="form-control js-select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option></option><option value="1">Activo</option><option value="0">Inactivo</option></select>
+                                                                        <span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-select_TERACTGRID-container"><span class="select2-selection__rendered" id="select2-select_TERACTGRID-container"><span class="select2-selection__placeholder"></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="no-sorting erp-dtable-filter-select2" style="width: 172px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" rowspan="1" colspan="1">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;">
+                                                                        <select id="select_TDOCCODGRID" class="form-control js-select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option></option><option value="1">CEDULA CIUDADANIA</option><option value="2">CEDULA EXTRANGERIA</option><option value="4">PASAPORTE</option></select>
+                                                                        <span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-labelledby="select2-select_TDOCCODGRID-container"><span class="select2-selection__rendered" id="select2-select_TDOCCODGRID-container"><span class="select2-selection__placeholder"></span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                    </div>
+                                                                </th>
+                                                                <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 152px;">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;">
+                                                                        <input type="text">
+                                                                    </div>
+                                                                </th>
+                                                                <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 152px;">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;">
+                                                                        <input type="text">
+                                                                    </div>
+                                                                </th>
+                                                                <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 153px;">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;">
+                                                                        <input type="text">
+                                                                    </div>
+                                                                </th>
+                                                                <th class="no-sorting erp-dtable-filter-input" rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 277px;">
+                                                                    <div class="dataTables_sizing" style="height:0;overflow:hidden;">
+                                                                        <input type="text">
+                                                                    </div>
+                                                                </th>
+                                                            </tr>
+
+                                                        </thead>
+
+                                                        <tbody>
+
+                                                            @foreach (var item in Model)
+                                                            {
+                                                                <tr role="row" class="odd">
+                                                                    <td align="center" valign="middle">
+                                                                        <div class="" style="">
+                                                                            <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar">
+                                                                                <i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"> @Html.ActionLink("Edit", "Edit", new { id = item.Id })</i>
+                                                                            </span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center" valign="middle" class="sorting_1">
+                                                                        <div class="" style="">
+                                                                            <span style="color: white " class="label label-sm label-success"> @Html.DisplayFor(modelItem => item.Active)</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center" valign="middle">
+                                                                        <div class="" style="">
+                                                                            <span style="color: black " class="label label-sm "> @Html.DisplayFor(modelItem => item.DocumentType)</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center" valign="middle">
+                                                                        <div class="" style="">
+                                                                            <div class="" style="">
+                                                                                <span class="" style="">  @Html.DisplayFor(modelItem => item.Document)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center" valign="middle">
+                                                                        <div class="" style="">
+                                                                            <div class="" style="">
+                                                                                <span class="" style="">@Html.DisplayFor(modelItem => item.Name)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center" valign="middle">
+                                                                        <div class="" style="">
+                                                                            <div class="" style="">
+                                                                                <span class="" style=""> @Html.DisplayFor(modelItem => item.LastName)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td align="center" valign="middle">
+                                                                        <div class="" style="">
+                                                                            <div class="" style="">
+                                                                                <span class="" style="">@Html.DisplayFor(modelItem => item.Email)</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                            }
+                                                            <tr role="row" class="odd">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar">
+                                                                            <i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">111111</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">MARCELO</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">ARANGO GOMEZ</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">marceloarango@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="even">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">222222</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">LUIS ALBERTO</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">PENA BERNAL</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">lpena@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="odd">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">333333</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">NANCY CAROLINA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">ASTAIZA MONJE</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">castaiza@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="even">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">444444</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">MAYULI ALEJANDRA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">ZAMORA LEMUS</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">mzamora@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="odd">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">555555</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">JENNY ADRIANA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">VILLAMIZAR OSORIO</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">jvillamizar@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="even">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">666666</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">FREDY</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">BARRERA GRIJALBA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">fbarrera@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="odd">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">777777</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">STELLA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">RAMIREZ CARVAJAL</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">stellaramirez@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="even">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">888888</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">DORIS ROCIO</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">JIMENEZ CERON</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">rjimenez@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="odd">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">999999</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">MARTHA CECILIA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">LOZADA GUZMAN</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">mlozada@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr role="row" class="even">
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span class="erp-table__cell-actions text-center fa-stack fa-lg" style="font-size:12px; cursor: pointer;" title="Editar"><i class="fa fa-square fa-stack-2x font-green"></i><i class="fa fa-pencil fa-stack-1x fa-inverse"></i></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle" class="sorting_1">
+                                                                    <div class="" style="">
+                                                                        <span style="color: white " class="label label-sm label-success">Activo</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <span style="color: black " class="label label-sm ">CEDULA CIUDADANIA</span>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">10101010101</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">PAOLA ANDREA</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">ORTIZ URREGO</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td align="center" valign="middle">
+                                                                    <div class="" style="">
+                                                                        <div class="" style="">
+                                                                            <span class="" style="">portiz@correo.com.co</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="dataTables_info" id="grdEmpleadoTH_info" role="status" aria-live="polite">Mostrando 1 a 10 de 10 registros</div>
+                                            <div class="dataTables_paginate paging_bootstrap_full_number" id="grdEmpleadoTH_paginate">
+                                                <ul class="pagination" style="visibility: visible;">
+                                                    <li class="prev disabled">
+                                                        <a href="#" title="First"><i class="fa fa-angle-double-left"></i></a>
+                                                    </li>
+                                                    <li class="prev disabled">
+                                                        <a href="#" title="Prev"><i class="fa fa-angle-left"></i></a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a href="#">1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">3</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">4</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">5</a>
+                                                    </li>
+                                                    <li class="next">
+                                                        <a href="#" title="Next"><i class="fa fa-angle-right"></i></a>
+                                                    </li>
+                                                    <li class="next">
+                                                        <a href="#" title="Last"><i class="fa fa-angle-double-right"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <!-- END PORTLET BODY-->
+
+                                </div>
+                                <!-- END PORTLET BODY-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ajax_loader" id="PageLoader" style="display: none;">
+                        <i class="loader" id="loader"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer">
+            </div>
+
+        </div>
+
+
+
+
+    </body>
+
+}

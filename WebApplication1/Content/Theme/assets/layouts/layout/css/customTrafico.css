@@ -1,0 +1,1430 @@
+/*--------------- TABLE -----------------*/
+
+.table.erp-table > tbody > tr > td,
+.table.erp-table > tbody > tr > th,
+.table.erp-table > tfoot > tr > td,
+.table.erp-table > tfoot > tr > th,
+.table.erp-table > thead > tr > td,
+.table.erp-table > thead > tr > th {
+    vertical-align: middle !important;
+    max-width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid transparent;
+    padding-left: 10px;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid transparent;
+}
+
+
+/*.table-scrollable {
+	min-height: 251px;
+}*/
+
+.erp-table__cell-actions a {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+    .erp-table__cell-actions a:focus,
+    .erp-table__cell-actions a:hover {
+        text-decoration: none !important;
+        opacity: .5;
+    }
+
+.erp-table__cell-actions i {
+    line-height: 28px !important;
+}
+
+.erp-table .label {
+    display: block;
+    width: 100% !important;
+}
+
+
+/*--------------- PORTLET FORM -----------------*/
+
+.portlet.erp-portlet-form .tab-content {
+    padding-top: 0px;
+}
+
+.portlet.erp-portlet-form .btn-group {
+    width: 100%;
+}
+
+.portlet.erp-portlet-form .form-actions {
+    min-height: 65px;
+}
+
+
+/*--------------- SELECT2 -----------------*/
+
+.select2-selection.select2-selection--single {
+    border-radius: 25px !important;
+    box-shadow: none !important;
+}
+
+.select2-selection__arrow {
+    margin-right: 5px;
+}
+
+    .select2-selection__arrow b {
+        border-color: #c2cad8 transparent transparent transparent !important;
+        border-width: 4px 4px 0 4px !important;
+    }
+
+.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection {
+    border-bottom-color: #c2cad8 !important;
+}
+
+.select2-dropdown.select2-dropdown--below {
+    margin-top: 5px !important;
+    border-top: 1px solid #93a1bb;
+}
+
+.select2-container--bootstrap .select2-selection {
+    font-family: "Open Sans", sans-serif !important;
+}
+
+
+/*--------------- SELECT CIRCLE -----------------*/
+
+.form-control.erp-select-circle {
+    padding-left: 15px;
+}
+
+    .form-control.erp-select-circle select {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        color: #9b9b9b;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent no-repeat 99% 60%;
+        background-size: 12px;
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTFweCIgaGVpZ2h0PSI2cHgiIHZpZXdCb3g9IjAgMCAxMSA2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0My4yICgzOTA2OSkgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+c2VsZWN0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtZmFtaWx5PSJGb250QXdlc29tZSIgZm9udC13ZWlnaHQ9Im5vcm1hbCI+CiAgICAgICAgPGcgaWQ9InNjcmVlbi0wMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM1NC4wMDAwMDAsIC0yODkuMDAwMDAwKSIgZmlsbD0iI0MyQ0FEOCI+CiAgICAgICAgICAgIDx0ZXh0IGlkPSJzZWxlY3QiPgogICAgICAgICAgICAgICAgPHRzcGFuIHg9IjM1NCIgeT0iMjk4Ij7vhIc8L3RzcGFuPgogICAgICAgICAgICA8L3RleHQ+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=');
+    }
+
+    .form-control.erp-select-circle .erp-select:hover {
+        cursor: pointer;
+    }
+
+
+/*--------------- SWITCH -----------------*/
+
+.erp-portlet-form .gm-switch {
+    -webkit-transform: translateX(-40px) translateY(-43px);
+    transform: translateX(-15px) translateY(-43px);
+    margin: 0 0 0 auto;
+    height: 0;
+}
+
+@media only screen and (max-width: 425px) {
+    .erp-portlet-form .gm-switch {
+        margin: 15px 15px 20px !important;
+        display: block;
+        position: relative !important;
+        float: none;
+        -webkit-transform: translateX(0px) translateY(0px);
+        transform: translateX(0px) translateY(0px);
+    }
+}
+
+.onoffswitch {
+    position: relative;
+    width: 80px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #E3E3E3;
+    border-radius: 50px !important;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    -webkit-transition: margin 0.3s ease-in 0s;
+    transition: margin 0.3s ease-in 0s;
+}
+
+    .onoffswitch-inner:before,
+    .onoffswitch-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 24px;
+        padding: 0;
+        line-height: 24px;
+        font-size: 11px;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        box-sizing: border-box;
+    }
+
+    .onoffswitch-inner:before {
+        content: "Activo";
+        padding-left: 13px;
+        background-color: #00C9D8;
+        color: #FFFFFF;
+    }
+
+    .onoffswitch-inner:after {
+        content: "Inactivo";
+        padding-right: 10px;
+        background-color: #FF4F5A;
+        color: #FFFFFF;
+        text-align: right;
+    }
+
+.onoffswitch-switch {
+    display: block;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 4px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 52px;
+    border: 2px solid transparent;
+    border-radius: 50% !important;
+    -webkit-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+
+/*--------------- FORM TABS -----------------*/
+
+.erp-hv-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    min-height: 544px;
+}
+
+
+/*--------------- SAVE / CLOSE BTNS MIDDLE PAGE   -----------------*/
+
+.erp-midpage-actions-wrp {
+    width: 100%;
+    min-height: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+    .erp-midpage-actions-wrp button {
+        margin-right: 10px !important;
+    }
+
+
+/*--------------- FILE UPLOAD   -----------------*/
+
+.gm-fileupload .input-group-addon {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+    .gm-fileupload .input-group-addon:focus,
+    .gm-fileupload .input-group-addon:hover {
+        cursor: pointer;
+        background-color: #c2cad8;
+        color: white !important;
+    }
+
+
+/*--------------- BTN-CIRC + / -   -----------------*/
+
+.gm-btn-circ {
+    font-size: 32px;
+    line-height: 32px;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+    .gm-btn-circ:hover {
+        opacity: .75;
+    }
+
+
+/*--------------- PORTLET FORM ACTIONS + LOGO   -----------------*/
+
+.form-actions-logo {
+    padding: 10px 20px !important;
+}
+
+    .form-actions-logo img {
+        max-width: 60px;
+    }
+
+    .form-actions-logo .btn {
+        margin-top: 15px;
+    }
+
+
+/*--------------- ERP BOXED WRP -----------------*/
+
+.erp-box-mn-wrp {
+    max-width: 1075px;
+    margin: 0 auto;
+}
+
+
+/*--------------- BOOTSTRAP MULTIPLE SELECT -----------------*/
+
+button.mt-multiselect {
+    color: #999;
+    border-color: #c2cad8;
+}
+
+    .multiselect-native-select .btn-group.open,
+    button.mt-multiselect:focus,
+    button.mt-multiselect:hover {
+        background: transparent !important;
+        color: #999 !important;
+        border-color: #93a1bb !important;
+    }
+
+    button.mt-multiselect .caret {
+        color: #c2cad8;
+    }
+
+
+/*--------------- ERP ACTION INLINE -----------------*/
+
+.erp-action-inline i {
+    line-height: 28px !important;
+}
+
+
+/*--------------- ERP PORTLET FOR TITLE ICON REPLACE  -----------------*/
+
+.erp-portlet-form .tools > a {
+    width: 13px !important;
+    height: 13px !important;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDE2IDE2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNiAxNjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTYsNi45djIuMmMwLDAuMy0wLjEsMC42LTAuMywwLjhjLTAuMiwwLjItMC41LDAuMy0wLjgsMC4zaC00Ljd2NC43YzAsMC4zLTAuMSwwLjYtMC4zLDAuOAoJQzkuNywxNS45LDkuNCwxNiw5LjEsMTZINi45Yy0wLjMsMC0wLjYtMC4xLTAuOC0wLjNzLTAuMy0wLjUtMC4zLTAuOHYtNC43SDEuMWMtMC4zLDAtMC42LTAuMS0wLjgtMC4zQzAuMSw5LjcsMCw5LjQsMCw5LjFWNi45CgljMC0wLjMsMC4xLTAuNiwwLjMtMC44czAuNS0wLjMsMC44LTAuM2g0LjdWMS4xYzAtMC4zLDAuMS0wLjYsMC4zLTAuOFM2LjYsMCw2LjksMGgyLjJjMC4zLDAsMC42LDAuMSwwLjgsMC4zCgljMC4yLDAuMiwwLjMsMC41LDAuMywwLjh2NC43aDQuN2MwLjMsMCwwLjYsMC4xLDAuOCwwLjNTMTYsNi42LDE2LDYuOXoiLz4KPC9zdmc+Cg==') !important;
+}
+
+
+/*--------------- ERP CUSTOM BTN SIZE  -----------------*/
+
+.erp-portlet-form .btn {
+    min-width: 120px;
+}
+
+
+/*--------------- ERP HELPER CLASSES  -----------------*/
+
+.erp-margin-15 {
+    margin: 15px;
+}
+
+.erp-margin-right-15 {
+    margin-right: 15px;
+}
+
+.erp-margin-left-15 {
+    margin-left: 15px;
+}
+
+.erp-padding-10 {
+    padding: 10px !important;
+}
+
+.erp-rounded-10 {
+    border-radius: 10px !important;
+}
+
+.erp-portlet-form.erp-collapse-icon .tools > a {
+    width: 14px !important;
+    height: 14px !important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJJJREFUeNrkkkEKgCAQRa3TBFJdROoEHa5Dtag2XaCgFm4K7AtfELGCdpHwFo7vywyaGGPEm5X8ICgQnEEHpL3kAUl3thsFNjCA4iZU0LGucsUaHGACZSRU8uygK/zDCmgwgtyr56xpOiIMurYXzpGRjjXlu7FZrLCCnqxh6Cro2t45UxVz7t6xASloP/7lTgEGALwVXbclDSW7AAAAAElFTkSuQmCC') !important;
+}
+
+body.modal-open {
+    overflow: hidden !important;
+}
+
+
+/*--------------- ERP LIST CHECKS  -----------------*/
+
+.erp-listchecks {
+    margin-bottom: 15px;
+    font-size: 11px;
+    border: 1px solid lightgray;
+    border-radius: 10px 10px 0 0 !important;
+    overflow: hidden;
+}
+
+    .erp-listchecks .erp-listchecks_search input {
+        width: 100%;
+        padding: 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .erp-listchecks .erp-listchecks_head {
+        padding: 5px;
+        text-align: center;
+        color: white;
+        background: #007BB5;
+    }
+
+    .erp-listchecks .erp-listchecks_items {
+        height: 140px;
+        margin: 0;
+        overflow-y: scroll;
+    }
+
+        .erp-listchecks .erp-listchecks_items .erp-listchecks_item {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            height: 28px;
+            margin: 0;
+            padding-left: 30px;
+            border: 0px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item:hover {
+                background: #EEEEEE !important;
+                cursor: pointer;
+            }
+
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item span {
+                position: absolute;
+                top: calc(50% - 9px);
+                left: 5px;
+                height: 18px;
+                width: 18px;
+                border: 1px solid transparent;
+                background: #E6E6E6;
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+            }
+
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item b {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: transparent;
+                z-index: -1;
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+            }
+
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item:hover b,
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item input:checked + span + b {
+                background: #eeeeee;
+            }
+
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item:hover span,
+            .erp-listchecks .erp-listchecks_items .erp-listchecks_item input:checked + span {
+                background: #d9d9d9;
+            }
+
+                .erp-listchecks .erp-listchecks_items .erp-listchecks_item input:checked + span:after {
+                    content: '';
+                    position: absolute;
+                    left: 6px;
+                    top: 2px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid #888;
+                    border-width: 0 2px 2px 0;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    display: block;
+                }
+
+        .erp-listchecks .erp-listchecks_items.items-radio span {
+            border-radius: 50% !important;
+        }
+
+    .erp-listchecks .erp-listchecks_item input {
+        display: none;
+    }
+
+.erp-listchecks_item_plusinput {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 28px;
+    margin: 0;
+    border: 0px;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+    .erp-listchecks_item_plusinput:hover {
+        background: #EEEEEE;
+    }
+
+    .erp-listchecks_item_plusinput .erp-listchecks_item_input {
+        width: 70px;
+    }
+
+        .erp-listchecks_item_plusinput .erp-listchecks_item_input .erp-listchecks_item_percent {
+            display: inline-block;
+            vertical-align: middle;
+            width: 30px !important;
+            text-align: center;
+            border: 1px solid;
+            outline: 0;
+        }
+
+        .erp-listchecks_item_plusinput .erp-listchecks_item_input .erp-listchecks_item_percent-symbol {
+            padding-right: 5px;
+        }
+
+.erp-focussed {
+    background: #EEEEEE !important;
+}
+
+
+/*--------------- ERP FLOW PROTOTIPO  -----------------*/
+
+.erp-flow-nav-tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+    .erp-flow-nav-tabs li {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+
+.erp-table-flow_calendar-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 125px;
+}
+
+    .erp-table-flow_calendar-wrap span {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+        .erp-table-flow_calendar-wrap span input {
+            width: 100%;
+            text-align: center;
+            border: 1px solid lightgray;
+        }
+
+#erp-table-flow-dia_wrapper .erp-table-flow_calendar-wrap {
+    width: 100%;
+}
+
+.erp-portlet-table.erp-portlet-table--flow td,
+.erp-portlet-table.erp-portlet-table--flow th {
+    max-width: 125px !important;
+    min-width: 125px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.erp-portlet-table.erp-portlet-table--flow .erp-percent-trp {
+    width: 100%;
+}
+
+#erp-table-flow-dia_wrapper td.erp-xl-cell,
+#erp-table-flow-dia_wrapper th.erp-xl-cell {
+    min-width: 700px !important;
+    max-width: 100% !important;
+}
+
+.erp-portlet-table.erp-portlet-table--flow .dataTables_scroll {
+    border-bottom: 1px solid lightgray;
+}
+
+.fake-save {
+    display: none;
+}
+
+#erp-table-flow-mes_wrapper,
+#erp-table-flow-dia_wrapper {
+    display: none !important;
+}
+
+.btn.green:not(.btn-outline).focus,
+.btn.green:not(.btn-outline):focus {
+    color: #FFF;
+    background-color: #32c5d2;
+    border-color: #32c5d2;
+}
+
+.erp-fake-upload {
+    transition: opacity .3s ease-in-out;
+}
+
+    .erp-fake-upload:hover {
+        opacity: .75;
+    }
+
+.erp-flow-day-heads {
+    min-width: 22.84px;
+    min-width: 22.84px;
+    border: 1px solid lightgray;
+    font-size: 11px;
+    text-align: center;
+    background: #F5F5F5;
+}
+
+.erp-flow-dash-trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    color: white !important;
+    border-radius: 50% !important;
+}
+
+    .erp-flow-dash-trigger:hover {
+        text-decoration: none;
+    }
+
+
+/*--------------- TARIFARIO TV  -----------------*/
+
+#erp-table-tarifas-tv-vigencias_wrapper .table-scrollable,
+#erp-table-tarifas-tv-franjas_wrapper .table-scrollable {
+    border: 0px;
+    margin-top: 0px !important;
+}
+
+.erp-table-tarifas-tv input[type='text'] {
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+
+/*--------------- TRAFICO -----------------*/
+
+
+/* TRAFICO/TOPTOOLS */
+
+.erp-trafic-toptool {
+    height: 85px;
+    border: 1px solid lightgray;
+    border-radius: 5px !important;
+    overflow: hidden;
+   
+}
+.erp-trafic-toptool.column {
+   
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color:gray;
+}
+    .erp-trafic-toptool .erp-btn-indicadores {
+        width: 48px;
+        height: 48px;
+        margin: 0 5px;
+        text-decoration: none;
+        border: 0;
+        outline: 0;
+    }
+
+        .erp-trafic-toptool .erp-btn-indicadores:hover {
+            opacity: .7;
+        }
+
+    .erp-trafic-toptool .trafic-backweek:hover {
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
+        opacity: .5;
+    }
+
+    .erp-trafic-toptool .trafic-nextweek:hover {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+        opacity: .5;
+    }
+
+    .erp-trafic-toptool .trafic-nextweek {
+    }
+
+    .erp-trafic-toptool .erp-switchs {
+        width: 100%;
+        height: 100%;
+        color: gray;
+    }
+
+        .erp-trafic-toptool .erp-switchs td {
+            padding: 4px 12px;
+        }
+
+        .erp-trafic-toptool .erp-switchs tr:first-child {
+            border-bottom: 1px solid lightgray;
+        }
+
+        .erp-trafic-toptool .erp-switchs label {
+            margin: 0;
+        }
+
+
+    .erp-trafic-toptool .erp-switch-in .onoffswitch-inner:before {
+        content: "";
+        background-color: #ffeda8;
+    }
+
+    .erp-trafic-toptool .erp-switch-done .onoffswitch-inner:before {
+        content: "";
+        background-color: #b5c1d1;
+    }
+
+    .erp-trafic-toptool .erp-switch-in .onoffswitch-inner:after,
+    .erp-trafic-toptool .erp-switch-done .onoffswitch-inner:after {
+        content: "";
+        background-color: lightgray;
+    }
+
+
+/* TRAFICO/PORTLET */
+
+.erp-trafic-portlet .portlet-body {
+    padding: 0px !important;
+}
+
+.erp-trafic-portlet .portlet-title .caption button {
+    padding: 0;
+    vertical-align: middle;
+}
+
+    .erp-trafic-portlet .portlet-title .caption button:hover {
+        opacity: .5;
+    }
+
+.erp-trafic-main {
+    height: calc(100vh - 320px);
+    overflow: hidden;
+}
+
+    .erp-trafic-main.closed .erp-trafic-tabs {
+        width: 0%;
+    }
+
+    .erp-trafic-main.closed .erp-trafic-calendar {
+        width: 100%;
+    }
+
+
+    /* TRAFICO/TABS */
+
+    .erp-trafic-main .erp-trafic-tabs {
+        background: #EEEEEE;
+        width: 15%;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+.erp-trafic-tabs .erp-trafic-tab-link {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size:12px;
+}
+
+.erp-trafic-tabs .tabs-left.nav-tabs > li.active > a,
+.erp-trafic-tabs .tabs-left.nav-tabs > li > a:hover {
+    padding-left: 20px;
+    background: #E0E0E0;
+}
+
+
+/* TRAFICO/CALENDAR */
+
+.erp-trafic-main .erp-trafic-calendar {
+    background: #FFFFFF;
+    width: 85%;
+}
+
+.erp-trafic-calendar_wrp {
+    position: relative;
+    width: 100%;
+}
+
+.erp-trafic-calendar,
+.erp-trafic-calendar .tab-content,
+.erp-trafic-calendar .tab-pane,
+.erp-trafic-calendar .erp-trafic-calendar_wrp {
+    height: 100%;
+}
+
+.erp-trafic-calendar_header {
+    padding-right: 15px;
+    background-color: #5E738B;
+}
+
+.erp-trafic-calendar_header_col {
+    width: 12.5%;
+    text-align: center;
+    padding: 12px 5px;
+    border-right: 1px solid #EEEEEE;
+    font-size: 12px;
+    color: white;
+    background-color: #5E738B;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+    .erp-trafic-calendar_header_col:last-child {
+        border-right: 0;
+    }
+
+    .erp-trafic-calendar_header_col.semana_n {
+        background: #54667c;
+    }
+
+.erp-trafic-calendar_body {
+    height: calc(100% - 37px);
+    overflow: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.erp-trafic-calendar_row:nth-child(even) {
+    background: #FAFAFA;
+}
+
+.erp-trafic-calendar_row:hover {
+    background: rgba(52, 152, 219, .1);
+}
+
+.erp-trafic-calendar_col {
+    width: 12.5%;
+    padding: 3px;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+
+    .erp-trafic-calendar_col:last-child {
+        border-right: 0;
+    }
+
+    .erp-trafic-calendar_col.user {
+        background-color: rgba(175, 175, 175, .1);
+        padding: 10px 5px;
+    }
+
+        .erp-trafic-calendar_col.user .erp-top-icon {
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+            .erp-trafic-calendar_col.user .erp-top-icon > button {
+                position: relative;
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                padding: 0;
+                color: #8E44AD;
+                background: transparent;
+                border: 0;
+                outline: 0;
+            }
+
+        .erp-trafic-calendar_col.user.user .erp-top-icon > button:hover {
+            opacity: .5;
+        }
+
+        .erp-trafic-calendar_col.user .erp-top-icon > button:after {
+            content: '\f080';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-family: fontawesome;
+            text-decoration: none;
+        }
+
+        .erp-trafic-calendar_col.user .erp-user-avatar {
+            max-width: 75px;
+            max-height: 75px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .erp-trafic-calendar_col.user .erp-user-name {
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .erp-trafic-calendar_col.user .erp-user-badges {
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+            padding: 10px 0 0;
+        }
+
+    .erp-trafic-calendar_col.day.sabado,
+    .erp-trafic-calendar_col.day.domingo,
+    .erp-trafic-calendar_col.day.holiday {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQYV2NkQAN7Dx//z4gsBhJwtrVkhAvCBECKwILIAmBBdAGQIADQ8xNMxb7KyAAAAABJRU5ErkJggg==);
+    }
+
+    .erp-trafic-calendar_col.day .task-card {
+        padding: 5px;
+        margin-bottom: 3px;
+        height: 73px;
+        font-size: 10px;
+        overflow: hidden;
+        opacity: 1;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+
+        .erp-trafic-calendar_col.day .task-card.task-in {
+            background-color: #ffeda8;
+        }
+
+        .erp-trafic-calendar_col.day .task-card.task-done {
+            background-color: #D5D8DC;
+        }
+
+        .erp-trafic-calendar_col.day .task-card * {
+            white-space: nowrap !important;
+            text-overflow: ellipsis !important;
+            overflow: hidden !important;
+        }
+
+        .erp-trafic-calendar_col.day .task-card .task-id {
+            font-weight: bold;
+        }
+
+        .erp-trafic-calendar_col.day .task-card .task-cta .btn {
+            display: block;
+            margin: 5px 0 0 auto;
+            padding: 0 2px;
+            font-size: 10px;
+            font-weight: 400;
+            text-align: right;
+            font-style: italic;
+            
+        }
+
+            .erp-trafic-calendar_col.day .task-card .task-cta .btn i {
+                vertical-align: middle;
+                font-size: 1.2em;
+            }
+
+            .erp-trafic-calendar_col.day .task-card .task-cta .btn:focus,
+            .erp-trafic-calendar_col.day .task-card .task-cta .btn:hover {
+                opacity: 1;
+                text-decoration: none;
+            }
+
+
+/* TRAFICO/MODALS */
+
+.modal_user_avatar {
+    max-width: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+/* TRAFICO/MODALS/TASKINFO */
+
+.modal_user_task_status {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 98%;
+    margin: 0 auto;
+}
+
+    .modal_user_task_status .task_status_item {
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        font-size: 12px;
+    }
+
+        .modal_user_task_status .task_status_item:last-child {
+            -webkit-box-flex: inherit;
+            -ms-flex-positive: inherit;
+            flex-grow: inherit;
+        }
+
+        .modal_user_task_status .task_status_item .circle {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 2px solid #BFCAD1;
+            z-index: 2;
+        }
+
+        .modal_user_task_status .task_status_item.item_2 .headline {
+            margin-left: -6px;
+        }
+
+        .modal_user_task_status .task_status_item.item_3 .headline {
+            margin-left: -9px;
+        }
+
+        .modal_user_task_status .task_status_item.item_4 .headline {
+            margin-left: -10px;
+        }
+
+        .modal_user_task_status .task_status_item .line {
+            position: absolute;
+            width: 100%;
+            top: 20px;
+            height: 2px;
+            margin: 0;
+            background: #BFCAD1;
+        }
+
+    .modal_user_task_status.status_creada .item_1 .circle {
+        background: #3598DC;
+        border-color: #3598DC;
+    }
+
+    .modal_user_task_status.status_aceptada .item_1 .circle,
+    .modal_user_task_status.status_aceptada .item_1 .line,
+    .modal_user_task_status.status_aceptada .item_2 .circle {
+        background: #3598DC;
+        border-color: #3598DC;
+    }
+
+    .modal_user_task_status.status_entregada .item_1 .circle,
+    .modal_user_task_status.status_entregada .item_1 .line,
+    .modal_user_task_status.status_entregada .item_2 .circle,
+    .modal_user_task_status.status_entregada .item_2 .line,
+    .modal_user_task_status.status_entregada .item_3 .circle {
+        background: #3598DC;
+        border-color: #3598DC;
+    }
+
+    .modal_user_task_status.status_aprobada .item_1 .circle,
+    .modal_user_task_status.status_aprobada .item_1 .line,
+    .modal_user_task_status.status_aprobada .item_2 .circle,
+    .modal_user_task_status.status_aprobada .item_2 .line,
+    .modal_user_task_status.status_aprobada .item_3 .circle,
+    .modal_user_task_status.status_aprobada .item_3 .line,
+    .modal_user_task_status.status_aprobada .item_4 .circle {
+        background: #3598DC;
+        border-color: #3598DC;
+    }
+
+
+/* TRAFICO/MODALS/USERSTATS */
+
+.erp-trafic-modal-userstats .user-stat-pie {
+    margin: 15px auto;
+    position: relative;
+}
+
+    .erp-trafic-modal-userstats .user-stat-pie:after {
+        content: attr(data-percent) "%";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        font-size: 24px;
+        color: #3598DC;
+    }
+
+.erp-trafic-modal-userstats #user-stat-chart {
+    width: 100% !important;
+    height: 200px !important;
+}
+
+.erp-trafic-modal-userstats .labels {
+    background-color: #F5F5F5;
+}
+
+    .erp-trafic-modal-userstats .labels td {
+        padding: 15px;
+    }
+
+    .erp-trafic-modal-userstats .labels h3 {
+        margin-top: 0;
+    }
+
+
+/* TRAFICO/MEDIAQUERIES */
+
+@media only screen and (max-width: 768px) {
+    .erp-trafic-main {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        height: auto;
+    }
+
+        .erp-trafic-main .erp-trafic-calendar,
+        .erp-trafic-main .erp-trafic-tabs {
+            width: 100% !important;
+            height: 200px;
+        }
+
+    .js-erp-trafic-toogle-tabs {
+        display: none;
+    }
+}
+
+@media print {
+    .erp-trafic-main_calendar,
+    .erp-trafic-main_calendar .tab-content,
+    .erp-trafic-main_calendar .tab-pane,
+    .erp-trafic-main_calendar .erp-trafic-main_calendar_wrp,
+    .erp-trafic-main_calendar_wrp_body,
+    .erp-trafic-main {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .erp-trafic-main_calendar_wrp_header {
+        padding-right: 0px;
+    }
+}
+
+
+/*--------------- ERP GRADIENT-PROGRESS BAR  -----------------*/
+
+.erp-gradient-progress {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background: #EEEEEE;
+    overflow: hidden;
+    background-image: -webkit-gradient(linear, left top, right top, from(#1bbc9b), color-stop(50%, #f3c200), to(#e7505a));
+    background-image: linear-gradient(90deg, #1bbc9b 0%, #f3c200 50%, #e7505a 100%);
+}
+
+.erp-gradient-progress_bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    background: lightgray;
+    -webkit-transition: left .75s ease-in-out;
+    transition: left .75s ease-in-out;
+}
+
+    .erp-gradient-progress_bar:before {
+        content: attr(data-percent) "%";
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        right: 100%;
+        top: 10%;
+        height: 80%;
+        padding: 0 5px;
+        font-size: 12px;
+        background: rgba(25, 25, 25, .1);
+        color: white;
+        opacity: 0;
+        -webkit-transition: opacity 1.6s ease-in-out;
+        transition: opacity 1.6s ease-in-out;
+    }
+
+    .erp-gradient-progress_bar.pull-percent:before {
+        left: 0;
+        right: auto;
+    }
+
+    .erp-gradient-progress_bar.slided:before {
+        opacity: 1;
+    }
+
+.erp-trafic-modal-indicadores .user-info > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.erp-trafic-modal-indicadores .user-info .user-avatar {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.erp-trafic-modal-indicadores .table td,
+.erp-trafic-modal-indicadores .table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+    .erp-trafic-modal-indicadores .table td:first-child,
+    .erp-trafic-modal-indicadores .table th:first-child {
+        text-align: left;
+    }
+/*--------------- ERP HELPER CLASSES  -----------------*/
+@media print {
+    .modal-backdrop, .modal-backdrop.fade.in {
+        background-color: white;
+    }
+
+        .modal-backdrop.in {
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+}
+
+.erp-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.erp-flex-vhcenter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.erp-transition {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.erp-opacity-0 {
+    opacity: 0 !important;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.erp-text-truncate {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+/* SWITCH XS*/
+
+.erp-onoff-xs {
+    width: 60px;
+}
+
+    .erp-onoff-xs .onoffswitch-inner:before,
+    .erp-onoff-xs .onoffswitch-inner:after {
+        height: 20px;
+    }
+
+    .erp-onoff-xs .onoffswitch-switch {
+        width: 16px !important;
+        height: 16px !important;
+        right: 35px;
+    }
+
+    .erp-onoff-xs .onoffswitch-inner:before,
+    .onoffswitch-inner:after {
+        line-height: 21px;
+        font-size: 9px;
+    }
+
+    .erp-onoff-xs .onoffswitch-inner:before {
+        padding-left: 7px;
+    }
+
+    .erp-onoff-xs .onoffswitch-inner:after {
+        padding-right: 4px;
+    }
+
+.datepicker table tr.week:hover {
+    background: #eee;
+}
+
+.datepicker table tr.week-active,
+.datepicker table tr.week-active td,
+.datepicker table tr.week-active td:hover,
+.datepicker table tr.week-active.week td,
+.datepicker table tr.week-active.week td:hover,
+.datepicker table tr.week-active.week,
+.datepicker table tr.week-active:hover {
+    background-color: #006dcc;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088cc', endColorstr='#0044cc', GradientType=0);
+    border-color: #0044cc #0044cc #002a80;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* SWITCH XS*/
+
+/**LOADER*/
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#loader:before, #loader:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 10px solid transparent;
+    border-top-color: #3498db;
+}
+
+#loader:before {
+    z-index: 100;
+    animation: spin 1s infinite;
+}
+
+#loader:after {
+    border: 10px solid #ccc;
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.ajax_loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.5);
+}
+
+    .ajax_loader i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+    }
+/*END LOADER*/
+
+.erp-flex-grow1-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+    .erp-flex-grow1-grid > .erp-flex-grow1-grid_child {
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+
+    .ddl-compania-trf {
+    left: auto !important;
+
+}
+
+    .ddl-compania-trf:after,
+    .ddl-compania-trf:before  {
+        left: auto !important;
+        right:10px !important;
+        
+    }
+.ddl-compania-trf a {
+    text-align:right;
+}
+.erp-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
