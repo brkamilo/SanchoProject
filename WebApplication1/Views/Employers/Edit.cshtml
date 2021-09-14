@@ -50,6 +50,7 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Image)
     <body id="BdyLayoutLogin" class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 
         <input id="NameControllerERP" name="NameControllerERP" type="hidden" value="Home">
@@ -126,7 +127,17 @@
                                                                         <span class="btn default btn-file">
                                                                             <span class="fileinput-new ">Subir Imagen </span>
                                                                             <span class="fileinput-exists">Cambiar</span>
-                                                                            <input type="file" accept="image/x-png,image/gif,image/jpeg" name="file" id="file">
+                                                                            @{ if (Model.Image != null)
+                                                                                {
+                                                                                    imagePath = Model.Image;
+                                                                                    <input type="file" value="@imagePath" accept="image/x-png,image/gif,image/jpeg" name="file" id="file">
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <input type="file" accept="image/x-png,image/gif,image/jpeg" name="file" id="file">
+                                                                                }
+                                                                            }
+
                                                                         </span>
                                                                         <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput">Quitar</a>
                                                                     </div>
@@ -211,7 +222,7 @@
 
                                                             <div class="btn btn-circle green btn-outline btn-border-1x">
 
-                                                                @Html.ActionLink("Cancelar", "UserManagment")
+                                                                @Html.ActionLink("Atrás", "UserManagment")
                                                             </div>
 
                                                         </div>

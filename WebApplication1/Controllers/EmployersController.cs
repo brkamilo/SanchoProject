@@ -55,7 +55,7 @@ namespace WebApplication1.Controllers
 
         // GET: Employers/Create
         public ActionResult Create()
-        {            
+        {
             ViewBag.DocumentType = new SelectList(db.DocumentType, "Id", "DocumentType1");
             ViewBag.ImageUpload = ImageUpload;
             ViewBag.Gender = ListGender();
@@ -71,10 +71,10 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                string ImageName = System.IO.Path.GetFileName(file.FileName);
-                string physicalPath = Server.MapPath("~/Content/Photo/" + ImageName);
-                file.SaveAs(physicalPath);
-                employer.Image = ImageName;
+                if (file != null)
+                {
+                    employer.Image = SaveImage(file);
+                }
                 db.Employer.Add(employer);
                 db.SaveChanges();
                 return RedirectToAction("UserManagment");
@@ -111,10 +111,10 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                string ImageName = System.IO.Path.GetFileName(file.FileName);
-                string physicalPath = Server.MapPath("~/Content/Photo/" + ImageName);
-                file.SaveAs(physicalPath);
-                employer.Image = ImageName;
+                if (file != null)
+                {
+                    employer.Image = SaveImage(file);
+                }
                 db.Entry(employer).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Edit");
@@ -165,6 +165,14 @@ namespace WebApplication1.Controllers
                 Value = "Femenino"
             });
             return listItems;
+        }
+
+        public string SaveImage(HttpPostedFileBase file)
+        {
+            string imageName = System.IO.Path.GetFileName(file.FileName);
+            string physicalPath = Server.MapPath("~/Content/Photo/" + imageName);
+            file.SaveAs(physicalPath);
+            return imageName;
         }
         protected override void Dispose(bool disposing)
         {
