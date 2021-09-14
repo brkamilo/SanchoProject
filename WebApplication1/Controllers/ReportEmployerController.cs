@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
 {
     public class ReportEmployerController : ApiController
     {
-        private EmployerManagmentEntities db = new EmployerManagmentEntities();
+        private readonly EmployerManagmentEntities db = new EmployerManagmentEntities();
 
         // GET: api/ReportEmployer
         public IQueryable<Employer> GetEmployer()
@@ -33,6 +33,14 @@ namespace WebApplication1.Controllers
             }
 
             return Ok(employer);
+        }
+
+        // GET: api/ReportEmployer/5
+        [ResponseType(typeof(Employer))]
+        public IQueryable<Employer> GetEmployer(bool state, string gender)
+        {
+            IQueryable<Employer> employer = db.Employer.Where(e => e.Active == state && e.Gender == gender);          
+            return (employer);
         }
 
         // PUT: api/ReportEmployer/5

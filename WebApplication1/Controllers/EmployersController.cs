@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using WebApplication1.Models;
 
@@ -13,7 +15,7 @@ namespace WebApplication1.Controllers
     public class EmployersController : Controller
     {
         private EmployerManagmentEntities db = new EmployerManagmentEntities();
-
+        private HttpPostedFileBase ImageUpload { get; set; }
         // GET: Employers
         public ActionResult Index()
         {
@@ -30,7 +32,8 @@ namespace WebApplication1.Controllers
         // GET: Employers
         public ActionResult Report()
         {
-            var employer = db.Employer.Include(e => e.DocumentType1);
+            ReportEmployerController rep = new ReportEmployerController();
+            IQueryable<Employer> employer = rep.GetEmployer(true, "Masculino");
             return View(employer.ToList());
         }
 
@@ -54,6 +57,7 @@ namespace WebApplication1.Controllers
         public ActionResult Create()
         {            
             ViewBag.DocumentType = new SelectList(db.DocumentType, "Id", "DocumentType1");
+            ViewBag.ImageUpload = ImageUpload;
             ViewBag.Gender = ListGender();
             return View();
         }
@@ -63,16 +67,20 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,LastName,Document,DocumentType,Email,Gender,Age,Image,Active")] Employer employer)
+        public ActionResult Create([Bind(Include = "Id,Name,LastName,Document,DocumentType,Email,Gender,Age,Image,Active")] Employer employer, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                string ImageName = System.IO.Path.GetFileName(file.FileName);
+                string physicalPath = Server.MapPath("~/Content/Photo/" + ImageName);
+                file.SaveAs(physicalPath);
+                employer.Image = ImageName;
                 db.Employer.Add(employer);
                 db.SaveChanges();
                 return RedirectToAction("UserManagment");
             }
 
-            ViewBag.DocumentType = new SelectList(db.DocumentType, "Id", "DocumentType1", employer.DocumentType);           
+            ViewBag.DocumentType = new SelectList(db.DocumentType, "Id", "DocumentType1", employer.DocumentType);
             ViewBag.Gender = ListGender();
             return View(employer);
         }
@@ -88,7 +96,7 @@ namespace WebApplication1.Controllers
             if (employer == null)
             {
                 return HttpNotFound();
-            }          
+            }
             ViewBag.Gender = ListGender();
             ViewBag.DocumentType = new SelectList(db.DocumentType, "Id", "DocumentType1", employer.DocumentType);
             return View(employer);
@@ -99,13 +107,17 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,LastName,Document,DocumentType,Email,Gender,Age,Image,Active")] Employer employer)
+        public ActionResult Edit([Bind(Include = "Id,Name,LastName,Document,DocumentType,Email,Gender,Age,Image,Active")] Employer employer, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                string ImageName = System.IO.Path.GetFileName(file.FileName);
+                string physicalPath = Server.MapPath("~/Content/Photo/" + ImageName);
+                file.SaveAs(physicalPath);
+                employer.Image = ImageName;
                 db.Entry(employer).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("UserManagment");
+                return RedirectToAction("Edit");
             }
             ViewBag.DocumentType = new SelectList(db.DocumentType, "Id", "DocumentType1", employer.DocumentType);
             return View(employer);

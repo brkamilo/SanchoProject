@@ -142,7 +142,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EmployersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportEmployerController.cs" />
@@ -1240,6 +1239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Photo\" />
     <Folder Include="Content\Theme\assets\global\plugins\amcharts\amcharts\lang\" />
     <Folder Include="Content\Theme\assets\global\plugins\amcharts\amcharts\patterns\black\" />
     <Folder Include="Content\Theme\assets\global\plugins\amcharts\amcharts\patterns\chalk\" />
